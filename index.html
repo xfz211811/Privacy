@@ -6,6 +6,7 @@
     <title>Document</title>
     <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
 </head>
 
 <body>
@@ -44,15 +45,16 @@
         <p>b) 在使用<span style="color:#ffbb66;">{{ app_name }}</span>网络服务进行网上交易时，您不可避免的要向交易对方或潜在的交易对方披露自己的个人信息，如联络方式或者邮政地址。请您妥善保护自己的个人信息，仅在必要的情形下向他人提供。如您发现自己的个人信息泄密，尤其是<span style="color:#ffbb66;">{{ app_name }}</span>用户名及密码发生泄露，请您立即联络<span style="color:#ffbb66;">{{ app_name }}</span>客服，以便<span style="color:#ffbb66;">{{ app_name }}</span>采取相应措施。</p>
     </div>
     <script>
+    const router = new VueRouter({})
     var app = new Vue({
         el: '#app',
         data: {
-            app_name: 'ad'
+            app_name: '此应用'
         },
-        created: function (){
-        	let a = this.$route.params.id
-        	console.log(a);
-        }
+        created: function() {
+            this.app_name = this.$route.params.id
+        },
+        router 
     })
     </script>
 </body>
